@@ -3,7 +3,10 @@ body{
 }
 
 .container {
-    background-color: #00BB55;
+    background-color: teal/*#00BB55*/;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
 }
 
 
@@ -11,20 +14,25 @@ h1 {
     text-align: center;
     font-size: 75px;
     font-family: 'Righteous', cursive;
+    color: #660099;
 }
 
 .headers {
     text-align: center;
+    color: white;
+
 }
 
 .content {
     text-align: center;
+    color: black;
+    font-family: 'Droid Serif', serif;
 }
 
 .startButton {
     height: 100px;
     width: 300px;
-    margin-top: 25px;
+    margin-top: 5px;
     margin-bottom: 100px;
     font-size: 50px;
 }
@@ -40,5 +48,8 @@ h1 {
     height: 400px;
     width: 400px;
     margin-bottom: 100px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
 

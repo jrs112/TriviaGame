@@ -1,6 +1,6 @@
 var timeLeft = 16;
 var correct = 0;
-var wrong = 0;
+var incorrect = 0;
 var correctAnswer;
 var correctImage;
 var questionOne = false;
@@ -49,7 +49,7 @@ function firstQuestion() {
     $(".dell").on("click",correctChoice);
     $(".gerald").on("click",wrongChoice);
     $(".kemba").on("click",wrongChoice);
-    $(".muggsy").on("click}, 1000);",wrongChoice);
+    $(".muggsy").on("click",wrongChoice);
     }, 1000);
 }
 
@@ -111,7 +111,7 @@ function fifthQuestion() {
     run();
     setTimeout(function(){
     $(".content").html("<h2>What University did Charlotte Hornet's All Star Kemba Walker win a NCAA National Championship at?</h2>" +
-                        '<p><button type="button" class="btn btn-primary optionButton uconn">University of Connecticut</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton uconn">UCONN</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton chapel">UNC Chapel Hill</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton charlotte">UNC Charlotte</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton kentucky">University of Kentucky</button></p>');
@@ -183,11 +183,11 @@ function ninthQuestion() {
     run();
     setTimeout(function(){
     $(".content").html("<h2>What nationality is Nic Batum?</h2>" +
-                        '<p><button type="button" class="btn btn-primary optionButton usa">United States</button></p>' +
-                        '<p><button type="button" class="btn btn-primary optionButton canada">Canada</button></p>' +
-                        '<p><button type="button" class="btn btn-primary optionButton france">France</button></p>' +
-                        '<p><button type="button" class="btn btn-primary optionButton algeria">Algeria</button></p>');
-    correctAnswer = "France!";
+                        '<p><button type="button" class="btn btn-primary optionButton usa">American</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton canada">Canadian</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton france">French</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton algeria">Algerian</button></p>');
+    correctAnswer = "French!";
     correctImage = "french.jpg";
     questionNine = true;
     $(".france").on("click",correctChoice);
@@ -220,7 +220,7 @@ function outOfTime() {
     $(".headers").html("<h2>You ran out of time! The correct answer is " + correctAnswer + "</h2>");
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/mjtime.png" alt="MJ Time Pic">')
-    wrong++;
+    incorrect++;
     timeLeft = 16;
     check();
 }
@@ -237,7 +237,7 @@ function wrongChoice() {
     $(".headers").html("<h2>You are incorrect! The correct answer is " + correctAnswer + "</h2>");
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/marvin.jpeg" alt="Marvin Williams">');
-    wrong++;
+    incorrect++;
     timeLeft = 16;
     check();
 }
@@ -275,9 +275,9 @@ function check() {
     }   }, 1000 * 3);
 }
 function results() {
-    $(".headers").html("<h2>Your Results!</h2>" +
-                       "<h3>Correct: " + correct + "</h3>" +
-                       "<h3>Incorrect: " + wrong + "</h3>" +
+    $(".headers").html("<h1>Your Results!</h1>" +
+                       "<h2>Correct: " + correct + "</h2>" +
+                       "<h2>Incorrect: " + incorrect + "</h2>" +
                        '<p><button type="button" class="btn btn-danger optionButton startOver">Restart</button></p>');
     $(".startOver").on("click",restart);
     clearInterval(clock);
@@ -287,7 +287,7 @@ function results() {
 function restart() {
     timeLeft = 16;
     correct = 0;
-    wrong = 0;
+    incorrect = 0;
     questionOne = false;
     questionTwo = false;
     questionThree = false;
