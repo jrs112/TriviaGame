@@ -2,6 +2,7 @@ var timeLeft = 16;
 var correct = 0;
 var wrong = 0;
 var correctAnswer;
+var correctImage;
 var questionOne = false;
 var questionTwo = false;
 var questionThree = false;
@@ -43,6 +44,7 @@ function firstQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton dell">Dell Curry</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton muggsy">Muggsy Bogues</button></p>');
     correctAnswer = "Dell Curry!";
+    correctImage = "curry.jpg";
     questionOne = true;
     $(".dell").on("click",correctChoice);
     $(".gerald").on("click",wrongChoice);
@@ -60,6 +62,7 @@ function secondQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton glen">Glen Rice</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton muggsy">Muggsy Bogues</button></p>');
     correctAnswer = "Baron Davis!";
+    correctImage = "baron.jpg";
     questionTwo = true;
     $(".baron").on("click",correctChoice);
     $(".gerald").on("click",wrongChoice);
@@ -77,6 +80,7 @@ function thirdQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton sting">Mr. Sting</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton hugo">Hugo</button></p>');
     correctAnswer = "Hugo!";
+    correctImage = "hugo.jpg";
     questionThree = true;
     $(".hugo").on("click",correctChoice);
     $(".queen").on("click",wrongChoice);
@@ -94,6 +98,7 @@ function fourthQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton garden">The Garden</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton mj">The House MJ Built</button></p>');
     correctAnswer = "The Hive!";
+    correctImage = "hive.jpg";
     questionFour = true;
     $(".hive").on("click",correctChoice);
     $(".palace").on("click",wrongChoice);
@@ -111,6 +116,7 @@ function fifthQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton charlotte">UNC Charlotte</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton kentucky">University of Kentucky</button></p>');
     correctAnswer = "University of Connecticut!";
+    correctImage = "kembawalker.jpg";
     questionFive = true;
     $(".uconn").on("click",correctChoice);
     $(".chapel").on("click",wrongChoice);
@@ -128,6 +134,7 @@ function sixthQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton oneHundred">100 Points</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton ninetyFive">95 Points</button></p>');
     correctAnswer = "95 Points!";
+    correctImage = "pizzaone.jpg";
     questionSix = true;
     $(".ninetyFive").on("click",correctChoice);
     $(".oneHundredFive").on("click",wrongChoice);
@@ -145,6 +152,7 @@ function seventhQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton george">George Shinn</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton larry">Larry Brown</button></p>');
     correctAnswer = "Michael Jordan!";
+    correctImage = "jordan.jpg";
     questionSeven = true;
     $(".michael").on("click",correctChoice);
     $(".nellie").on("click",wrongChoice);
@@ -162,6 +170,7 @@ function eigthQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton lady">The Lady Hornets</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton honey">The Honey Bees</button></p>');
     correctAnswer = "The Honey Bees!";
+    correctImage = "honey.jpg";
     questionEight = true;
     $(".honey").on("click",correctChoice);
     $(".queenBees").on("click",wrongChoice);
@@ -179,6 +188,7 @@ function ninthQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton france">France</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton algeria">Algeria</button></p>');
     correctAnswer = "France!";
+    correctImage = "french.jpg";
     questionNine = true;
     $(".france").on("click",correctChoice);
     $(".usa").on("click",wrongChoice);
@@ -190,106 +200,48 @@ function ninthQuestion() {
 function tenthQuestion() {
     run();
     setTimeout(function(){
-    $(".content").html("<h2>Who is the Charlotte Hornets franchise leader in rebounds?</h2>" +
+    $(".content").html("<h2>Who is the Charlotte Hornets all-time leader in rebounds?</h2>" +
                         '<p><button type="button" class="btn btn-primary optionButton lj">Larry Johnson</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton al">Al Jefferson</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton anthony">Anthony Mason</button></p>' +
-                        '<p><button type="button" class="btn btn-primary optionButton emeka">Emeka Okafor</button></p>');
-    correctAnswer = "Emeka Okafor!";
+                        '<p><button type="button" class="btn btn-primary optionButton alonzo">Alonzo Morning</button></p>');
+    correctAnswer = "Larry Johnson!";
+    correctImage = "larry.jpg";
     questionTen = true;
-    $(".emeka").on("click",correctChoice);
+    $(".lj").on("click",correctChoice);
     $(".al").on("click",wrongChoice);
-    $(".lj").on("click",wrongChoice);
+    $(".alonzo").on("click",wrongChoice);
     $(".anthony").on("click",wrongChoice);
     }, 1000);
 }
 
 
 function outOfTime() {
-    $(".headers").html("<h3>You ran out of time! The correct answer is " + correctAnswer + "</h3>");
+    $(".headers").html("<h2>You ran out of time! The correct answer is " + correctAnswer + "</h2>");
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/mjtime.png" alt="MJ Time Pic">')
     wrong++;
     timeLeft = 16;
-    setTimeout(function(){
-        if (questionTwo === false) {
-            secondQuestion();
-        }
-        else if(questionThree === false) {
-            thirdQuestion();
-        }
-        else if(questionFour === false) {
-            fourthQuestion();
-        }
-        else if(questionFive === false) {
-            fifthQuestion();
-        }
-        else if(questionSix === false) {
-            sixthQuestion();
-        }
-        else if(questionSeven === false) {
-            seventhQuestion();
-        }
-        else if(questionEight === false) {
-            eigthQuestion();
-        }
-        else if(questionNine === false) {
-            ninthQuestion();
-        }
-        else if(questionTen === false) {
-            tenthQuestion();
-        }
-        else {
-            results();
-    }   }, 1000 * 2);
-
+    check();
 }
 
 function correctChoice() {
-    $(".headers").html("<h3>You are correct! The correct answer is " + correctAnswer + "</h3>");
+    $(".headers").html("<h2>You are correct! The correct answer is " + correctAnswer + "</h2>");
     clearInterval(clock);
-    $(".content").html('<img class="images" src="assets/images/kembawalker.jpg" alt="Kemba Walker">')
+    $(".content").html('<img class="images" src="assets/images/' + correctImage + '"alt="MJ Image">')
     correct++;
     timeLeft = 16;
-    setTimeout(function(){
-        if (questionTwo === false) {
-            secondQuestion();
-        }
-        else if(questionThree === false) {
-            thirdQuestion();
-        }
-        else if(questionFour === false) {
-            fourthQuestion();
-        }
-        else if(questionFive === false) {
-            fifthQuestion();
-        }
-        else if(questionSix === false) {
-            sixthQuestion();
-        }
-        else if(questionSeven === false) {
-            seventhQuestion();
-        }
-        else if(questionEight === false) {
-            eigthQuestion();
-        }
-        else if(questionNine === false) {
-            ninthQuestion();
-        }
-        else if(questionTen === false) {
-            tenthQuestion();
-        }
-        else {
-            results();
-    }   }, 1000 * 2);
+    check();
 }
-
 function wrongChoice() {
-    $(".headers").html("<h3>You are incorrect! The correct answer is " + correctAnswer + "</h3>");
+    $(".headers").html("<h2>You are incorrect! The correct answer is " + correctAnswer + "</h2>");
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/marvin.jpeg" alt="Marvin Williams">');
     wrong++;
     timeLeft = 16;
+    check();
+}
+function check() {
     setTimeout(function(){
         if (questionTwo === false) {
             secondQuestion();
@@ -320,9 +272,8 @@ function wrongChoice() {
         }
         else {
             results();
-    }   }, 1000 * 2);
+    }   }, 1000 * 3);
 }
-
 function results() {
     $(".headers").html("<h2>Your Results!</h2>" +
                        "<h3>Correct: " + correct + "</h3>" +
@@ -349,3 +300,4 @@ function restart() {
     questionTen = false;
     firstQuestion();
 }
+
