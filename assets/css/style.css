@@ -32,6 +32,7 @@ h1 {
 .optionButton {
     height: 100px;
     width: 300px;
+    font-size: 25px;
 }
 
 .images {

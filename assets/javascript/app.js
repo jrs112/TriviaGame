@@ -1,4 +1,4 @@
-var timeLeft = 5;
+var timeLeft = 16;
 var correct = 0;
 var wrong = 0;
 var correctAnswer;
@@ -31,7 +31,8 @@ function decrement() {
 }
 function firstQuestion() {
     run();
-    $(".content").html("<h2>Which player has scored the most points for the Charlotte Hornets?</h2>" +
+    setTimeout(function(){
+        $(".content").html("<h2>Which player has scored the most points for the Charlotte Hornets?</h2>" +
                         '<p><button type="button" class="btn btn-primary optionButton kemba">Kemba Walker</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton gerald">Gerald Wallace</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton dell">Dell Curry</button></p>' +
@@ -41,13 +42,13 @@ function firstQuestion() {
     $(".dell").on("click",correctChoice);
     $(".gerald").on("click",wrongChoice);
     $(".kemba").on("click",wrongChoice);
-    $(".muggsy").on("click",wrongChoice);
-
-
+    $(".muggsy").on("click}, 1000);",wrongChoice);
+    }, 1000);
 }
 
 function secondQuestion() {
     run();
+    setTimeout(function(){
     $(".content").html("<h2>Which Charlotte Hornets player holds the record for the longest shot in NBA history?</h2>" +
                         '<p><button type="button" class="btn btn-primary optionButton gerald">Gerald Wallace</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton baron">Baron Davis</button></p>' +
@@ -59,12 +60,12 @@ function secondQuestion() {
     $(".gerald").on("click",wrongChoice);
     $(".glen").on("click",wrongChoice);
     $(".muggsy").on("click",wrongChoice);
-
-
+    }, 1000);
 }
 
 function thirdQuestion() {
     run();
+    setTimeout(function(){
     $(".content").html("<h2>Who is the Charlotte Hornet's Mascot?</h2>" +
                         '<p><button type="button" class="btn btn-primary optionButton sir">Sir Purr</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton queen">Queen Bee</button></p>' +
@@ -76,12 +77,12 @@ function thirdQuestion() {
     $(".queen").on("click",wrongChoice);
     $(".sting").on("click",wrongChoice);
     $(".sir").on("click",wrongChoice);
-
-
+    }, 1000);
 }
 
 function fourthQuestion() {
     run();
+    setTimeout(function(){
     $(".content").html("<h2>What is the nickname of the Hornet's arena?</h2>" +
                         '<p><button type="button" class="btn btn-primary optionButton palace">The Palace</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton hive">The Hive</button></p>' +
@@ -93,12 +94,12 @@ function fourthQuestion() {
     $(".palace").on("click",wrongChoice);
     $(".garden").on("click",wrongChoice);
     $(".mj").on("click",wrongChoice);
-
-
+    }, 1000);
 }
 
 function fifthQuestion() {
     run();
+    setTimeout(function(){
     $(".content").html("<h2>What University did Charlotte Hornet's All Star Kemba Walker win a NCAA National Championship at?</h2>" +
                         '<p><button type="button" class="btn btn-primary optionButton uconn">University of Connecticut</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton chapel">UNC Chapel Hill</button></p>' +
@@ -110,8 +111,7 @@ function fifthQuestion() {
     $(".chapel").on("click",wrongChoice);
     $(".charlotte").on("click",wrongChoice);
     $(".kentucky").on("click",wrongChoice);
-
-
+    }, 1000);
 }
 
 
@@ -120,7 +120,7 @@ function outOfTime() {
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/mjtime.png" alt="MJ Time Pic">')
     wrong++;
-    timeLeft = 15;
+    timeLeft = 16;
     setTimeout(function(){
         if (questionTwo === false) {
             secondQuestion();
@@ -136,7 +136,7 @@ function outOfTime() {
         }
         else {
             results();
-    }   }, 1000 * 3);
+    }   }, 1000 * 2);
 
 }
 
@@ -145,7 +145,7 @@ function correctChoice() {
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/kembawalker.jpg" alt="Kemba Walker">')
     correct++;
-    timeLeft = 15;
+    timeLeft = 16;
     setTimeout(function(){
         if (questionTwo === false) {
             secondQuestion();
@@ -161,7 +161,7 @@ function correctChoice() {
         }
         else {
             results();
-    }   }, 1000 * 3);
+    }   }, 1000 * 2);
 }
 
 function wrongChoice() {
@@ -169,7 +169,7 @@ function wrongChoice() {
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/marvin.jpeg" alt="Marvin Williams">');
     wrong++;
-    timeLeft = 15;
+    timeLeft = 16;
     setTimeout(function(){
         if (questionTwo === false) {
             secondQuestion();
@@ -185,7 +185,7 @@ function wrongChoice() {
         }
         else {
             results();
-    }   }, 1000 * 3);
+    }   }, 1000 * 2);
 }
 
 function results() {
@@ -199,7 +199,7 @@ function results() {
 }
 
 function restart() {
-    timeLeft = 15;
+    timeLeft = 16;
     correct = 0;
     wrong = 0;
     questionOne = false;
