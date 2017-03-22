@@ -3,7 +3,7 @@ body{
 }
 
 .container {
-    background-color: teal/*#00BB55*/;
+    background-color: #00BB55;
     border-color: black;
     border-width: 2px;
     border-style: solid;
