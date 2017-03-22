@@ -7,6 +7,11 @@ var questionTwo = false;
 var questionThree = false;
 var questionFour = false;
 var questionFive = false;
+var questionSix = false;
+var questionSeven = false;
+var questionEight = false;
+var questionNine = false;
+var questionTen = false;
 
 
 
@@ -114,6 +119,91 @@ function fifthQuestion() {
     }, 1000);
 }
 
+function sixthQuestion() {
+    run();
+    setTimeout(function(){
+    $(".content").html("<h2>How many points do the Hornets need to score in order for fans to get 50% off of Papa Johns the next day?</h2>" +
+                        '<p><button type="button" class="btn btn-primary optionButton oneHundredFive">105 Points</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton ninety">90 Points</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton oneHundred">100 Points</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton ninetyFive">95 Points</button></p>');
+    correctAnswer = "95 Points!";
+    questionSix = true;
+    $(".ninetyFive").on("click",correctChoice);
+    $(".oneHundredFive").on("click",wrongChoice);
+    $(".oneHundred").on("click",wrongChoice);
+    $(".ninety").on("click",wrongChoice);
+    }, 1000);
+}
+
+function seventhQuestion() {
+    run();
+    setTimeout(function(){
+    $(".content").html("<h2>Who is the majority owner of the Charlotte Hornets?</h2>" +
+                        '<p><button type="button" class="btn btn-primary optionButton nellie">Nellie</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton michael">Michael Jordan</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton george">George Shinn</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton larry">Larry Brown</button></p>');
+    correctAnswer = "Michael Jordan!";
+    questionSeven = true;
+    $(".michael").on("click",correctChoice);
+    $(".nellie").on("click",wrongChoice);
+    $(".george").on("click",wrongChoice);
+    $(".larry").on("click",wrongChoice);
+    }, 1000);
+}
+
+function eigthQuestion() {
+    run();
+    setTimeout(function(){
+    $(".content").html("<h2>What is the name of the Charlotte Hornets Cheerleaders?</h2>" +
+                        '<p><button type="button" class="btn btn-primary optionButton queenBees">The Queen Bees</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton theSting">The Sting</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton lady">The Lady Hornets</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton honey">The Honey Bees</button></p>');
+    correctAnswer = "The Honey Bees!";
+    questionEight = true;
+    $(".honey").on("click",correctChoice);
+    $(".queenBees").on("click",wrongChoice);
+    $(".theSting").on("click",wrongChoice);
+    $(".lady").on("click",wrongChoice);
+    }, 1000);
+}
+
+function ninthQuestion() {
+    run();
+    setTimeout(function(){
+    $(".content").html("<h2>What nationality is Nic Batum?</h2>" +
+                        '<p><button type="button" class="btn btn-primary optionButton usa">United States</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton canada">Canada</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton france">France</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton algeria">Algeria</button></p>');
+    correctAnswer = "France!";
+    questionNine = true;
+    $(".france").on("click",correctChoice);
+    $(".usa").on("click",wrongChoice);
+    $(".canada").on("click",wrongChoice);
+    $(".algeria").on("click",wrongChoice);
+    }, 1000);
+}
+
+function tenthQuestion() {
+    run();
+    setTimeout(function(){
+    $(".content").html("<h2>Who is the Charlotte Hornets franchise leader in rebounds?</h2>" +
+                        '<p><button type="button" class="btn btn-primary optionButton lj">Larry Johnson</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton al">Al Jefferson</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton anthony">Anthony Mason</button></p>' +
+                        '<p><button type="button" class="btn btn-primary optionButton emeka">Emeka Okafor</button></p>');
+    correctAnswer = "Emeka Okafor!";
+    questionTen = true;
+    $(".emeka").on("click",correctChoice);
+    $(".al").on("click",wrongChoice);
+    $(".lj").on("click",wrongChoice);
+    $(".anthony").on("click",wrongChoice);
+    }, 1000);
+}
+
 
 function outOfTime() {
     $(".headers").html("<h3>You ran out of time! The correct answer is " + correctAnswer + "</h3>");
@@ -133,6 +223,21 @@ function outOfTime() {
         }
         else if(questionFive === false) {
             fifthQuestion();
+        }
+        else if(questionSix === false) {
+            sixthQuestion();
+        }
+        else if(questionSeven === false) {
+            seventhQuestion();
+        }
+        else if(questionEight === false) {
+            eigthQuestion();
+        }
+        else if(questionNine === false) {
+            ninthQuestion();
+        }
+        else if(questionTen === false) {
+            tenthQuestion();
         }
         else {
             results();
@@ -159,6 +264,21 @@ function correctChoice() {
         else if(questionFive === false) {
             fifthQuestion();
         }
+        else if(questionSix === false) {
+            sixthQuestion();
+        }
+        else if(questionSeven === false) {
+            seventhQuestion();
+        }
+        else if(questionEight === false) {
+            eigthQuestion();
+        }
+        else if(questionNine === false) {
+            ninthQuestion();
+        }
+        else if(questionTen === false) {
+            tenthQuestion();
+        }
         else {
             results();
     }   }, 1000 * 2);
@@ -182,6 +302,21 @@ function wrongChoice() {
         }
         else if(questionFive === false) {
             fifthQuestion();
+        }
+        else if(questionSix === false) {
+            sixthQuestion();
+        }
+        else if(questionSeven === false) {
+            seventhQuestion();
+        }
+        else if(questionEight === false) {
+            eigthQuestion();
+        }
+        else if(questionNine === false) {
+            ninthQuestion();
+        }
+        else if(questionTen === false) {
+            tenthQuestion();
         }
         else {
             results();
@@ -207,5 +342,10 @@ function restart() {
     questionThree = false;
     questionFour = false;
     questionFive = false;
+    questionSix = false;
+    questionSeven = false;
+    questionEight = false;
+    questionNine = false;
+    questionTen = false;
     firstQuestion();
 }
