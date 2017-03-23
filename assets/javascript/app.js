@@ -165,7 +165,7 @@ function seventhQuestion() {
                         '<p><button type="button" class="btn btn-primary optionButton michael">Michael Jordan</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton george">George Shinn</button></p>' +
                         '<p><button type="button" class="btn btn-primary optionButton larry">Larry Brown</button></p>');
-    correctAnswer = "Michael Jordan!  Michael Jordan became the majority owner fo the Charlotte Hornets in 2010 when the Hornets Franchise was known as the Charlotte Bobcats.";
+    correctAnswer = "Michael Jordan!  Michael Jordan became the majority owner of the Charlotte Hornets in 2010 when the Hornets Franchise was known as the Charlotte Bobcats.";
     correctImage = "jordan.jpg";
     correctAdj = "Space Jam Time!";
     incorrectAdj = "Your answer is incorrect!";
