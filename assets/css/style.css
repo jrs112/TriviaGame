@@ -16,6 +16,13 @@ h1 {
     font-family: 'Righteous', cursive;
     color: #660099;
 }
+.mainHead {
+    text-align: center;
+    font-size: 75px;
+    font-family: 'Righteous', cursive;
+    color: black;
+
+}
 
 .headers {
     text-align: center;
