@@ -4,6 +4,7 @@ var incorrect = 0;
 var correctAnswer;
 var correctImage;
 var correctAdj;
+var incorrectAdj;
 var questionOne = false;
 var questionTwo = false;
 var questionThree = false;
@@ -47,6 +48,7 @@ function firstQuestion() {
     correctAnswer = "Dell Curry!  He now is the TV commentator for Charlotte Hornets games on Fox Sports South.";
     correctImage = "curry.jpg";
     correctAdj = "Nice Job!";
+    incorrectAdj = "Wrong Answer!";
     questionOne = true;
     $(".dell").on("click",correctChoice);
     $(".gerald").on("click",wrongChoice);
@@ -66,6 +68,7 @@ function secondQuestion() {
     correctAnswer = "Baron Davis!  He buried an 89-foot shot with 0.7 seconds remaining back in 2001.";
     correctImage = "baron.jpg";
     correctAdj = "Way to go!";
+    incorrectAdj ="That's not right!";
     questionTwo = true;
     $(".baron").on("click",correctChoice);
     $(".gerald").on("click",wrongChoice);
@@ -85,6 +88,7 @@ function thirdQuestion() {
     correctAnswer = "Hugo!  Hugo is a 4-time winner of the NBA Mascot Slam Dunk Championship, and is also a 2-time winner of the NBA Best Mascot Award. ";
     correctImage = "hugo.jpg";
     correctAdj = "You know your mascots!";
+    incorrectAdj = "Try Again!";
     questionThree = true;
     $(".hugo").on("click",correctChoice);
     $(".queen").on("click",wrongChoice);
@@ -104,6 +108,7 @@ function fourthQuestion() {
     correctAnswer = "The Hive!  It is formally known as the Spectrum Center.";
     correctImage = "hive.jpg";
     correctAdj = "That's right!";
+    incorrectAdj="Wrong Choice!";
     questionFour = true;
     $(".hive").on("click",correctChoice);
     $(".palace").on("click",wrongChoice);
@@ -123,6 +128,7 @@ function fifthQuestion() {
     correctAnswer = "UCONN!  Kemba won the championship with UCONN back in 2011.";
     correctImage = "kembawalker.jpg";
     correctAdj = "You're a champ!";
+    incorrectAdj = "That's not correct!";
     questionFive = true;
     $(".uconn").on("click",correctChoice);
     $(".chapel").on("click",wrongChoice);
@@ -142,6 +148,7 @@ function sixthQuestion() {
     correctAnswer = "95 Points!  The promo code is Hornets95.";
     correctImage = "pizzaone.jpg";
     correctAdj = "You must like pizza!";
+    incorrectAdj = "That's the wrong number of points!";
     questionSix = true;
     $(".ninetyFive").on("click",correctChoice);
     $(".oneHundredFive").on("click",wrongChoice);
@@ -161,6 +168,7 @@ function seventhQuestion() {
     correctAnswer = "Michael Jordan!  Michael Jordan became the majority owner fo the Charlotte Hornets in 2010 when the Hornets Franchise was known as the Charlotte Bobcats.";
     correctImage = "jordan.jpg";
     correctAdj = "Space Jam Time!";
+    incorrectAdj = "Your answer is incorrect!";
     questionSeven = true;
     $(".michael").on("click",correctChoice);
     $(".nellie").on("click",wrongChoice);
@@ -180,6 +188,7 @@ function eigthQuestion() {
     correctAnswer = "The Honey Bees!  There are 21 Honey Bees on the current team.";
     correctImage = "honey.jpg";
     correctAdj = "Time to dance!";
+    incorrectAdj = "Better luck next time!";
     questionEight = true;
     $(".honey").on("click",correctChoice);
     $(".queenBees").on("click",wrongChoice);
@@ -199,9 +208,10 @@ function ninthQuestion() {
     correctAnswer = "French!  Nic attempts to teach his teammates French in hilarious videos on the Jumbotron during Hornets Games.";
     correctImage = "french.jpg";
     correctAdj = "Parlez-vous francais?";
+    incorrectAdj = "Wrong Answer!";
     questionNine = true;
     $(".france").on("click",correctChoice);
-    $(".usa").on("click",wrongChoice);
+    $(".usa").on("click",wrongChoice)
     $(".canada").on("click",wrongChoice);
     $(".algeria").on("click",wrongChoice);
     }, 1000);
@@ -218,6 +228,7 @@ function tenthQuestion() {
     correctAnswer = "Larry Johnson!  Emeka Okafor is the franchise leader but that was with the Bobcats before the franchise changed back to the Hornets.";
     correctImage = "larry.jpg";
     correctAdj = "Great Answer!";
+    incorrectAdj = "Your choice is incorrect!";
     questionTen = true;
     $(".lj").on("click",correctChoice);
     $(".al").on("click",wrongChoice);
@@ -228,7 +239,7 @@ function tenthQuestion() {
 
 
 function outOfTime() {
-    $(".headers").html("<h2>You ran out of time! The correct answer is " + correctAnswer + "</h2>");
+    $(".headers").html("<h3>You ran out of time! The correct answer is " + correctAnswer + "</h3>");
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/mjtime.png" alt="MJ Time Pic">')
     incorrect++;
@@ -245,7 +256,7 @@ function correctChoice() {
     check();
 }
 function wrongChoice() {
-    $(".headers").html("<h2><strong>You are incorrect!</strong> The correct answer is " + correctAnswer + "</h2>");
+    $(".headers").html("<h3><strong>" + incorrectAdj + "</strong> The correct answer is " + correctAnswer + "</h3>");
     clearInterval(clock);
     $(".content").html('<img class="images" src="assets/images/marvin.jpeg" alt="Marvin Williams">');
     incorrect++;

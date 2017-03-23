@@ -1,33 +1,34 @@
 body{
     background-color: #660099;
 }
-
 .container {
     background-color: #00BB55;
     border-color: black;
     border-width: 2px;
     border-style: solid;
 }
-
-
 h1 {
     text-align: center;
     font-size: 75px;
     font-family: 'Righteous', cursive;
     color: #660099;
 }
+
 .mainHead {
     text-align: center;
     font-size: 75px;
     font-family: 'Righteous', cursive;
     color: black;
-
 }
-
 .headers {
     text-align: center;
     color: white;
 
+}
+h3 {
+    font-size: 30px;
+    color: red;
+    font-family: 'Droid Serif', serif;
 }
 
 .content {
